@@ -23,12 +23,22 @@
 		<h1><span aria-hidden="true">🧑‍💻</span> EDW portfolio - développeur</h1>
 
     <?php
-        # GET
-        if(isset($_GET ['page']))
-            print "numero de page : ".($_GET['page']);
+        # $_GET(recupere des infos) + CONDITION -> VUE
+        $vue = $_GET ['page'];
+        if($vue == 1)
+            include_once __DIR__.'/vue/presentation.html';
+        if($vue == 2)
+            include_once __DIR__.'/vue/formation.html';
+        if($vue == 3)
+            include_once __DIR__.'/vue/about.html';
 
-        # CONDITION
-        
+        elseif($vue >=3 || $vue <=0)
+            print "<p> Erreur : La page demandé n'existe pas !";
+
+            # else permet de tomber sur l'index par defauts
+        else
+            include_once __DIR__.'/vue/presentation.html';
+
     ?>
 
 	</main>
