@@ -24,8 +24,11 @@
 
     <?php
         # GET
-        
+        if(isset($_GET ['page']))
+            print "numero de page : ".($_GET['page']);
 
+        # CONDITION
+        
     ?>
 
 	</main>
